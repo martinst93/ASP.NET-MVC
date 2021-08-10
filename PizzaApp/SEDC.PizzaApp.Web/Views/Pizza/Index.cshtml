@@ -1,0 +1,46 @@
+﻿@model List<SEDC.PizzaApp.Web.Models.ViewModels.PizzaViewModel>
+<!--<h2>Pizza list</h2>-->
+<div class="row">
+        <div class="col-md-4">
+            <p class="text-center">
+                @ViewData["Title"]
+            </p>
+            <p class="text-center">
+                @ViewData["NumberOfApp"]
+            </p>
+            <p class="text-center">
+                @ViewData["Pizza"]
+            </p>
+            <p class="text-center">
+                @ViewBag.Name
+            </p>
+            <p class="text-center">
+                @ViewBag.NumberOfPizzas
+            </p>
+            <p class="text-center">
+                @ViewBag.Pizza.Name
+            </p>
+        </div>
+    </div>
+
+
+<div class="row">
+    <div class="col-md-5">
+        @foreach (var pizza in Model)
+        {
+            <h4>Pizza Details</h4>
+            <p>Pizza Name: @pizza.Id</p>
+            <p>User: @pizza.Name</p>
+            <p>Price: @pizza.Price</p>
+            <p>Payment method: @pizza.PizzaSize</p>
+        }
+
+    </div>
+</div>
+@*<div class="row">
+        <div class="col-md-4">
+            <p class="text-center">
+                @ViewBag.Pizza.Name
+            </p>
+        </div>
+    </div>*@
