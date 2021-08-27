@@ -22,7 +22,8 @@ namespace E_Store.DataAccess
                 Price = 200,
                 Promotion = false,
                 TypeOfPromotion = TypeOfPromotion.None,
-                Review = "4 stars"
+                Review = "4 stars",
+                Image = "1.jpeg"
             },
             new Product
             {
@@ -33,7 +34,8 @@ namespace E_Store.DataAccess
                 Price = 250,
                 Promotion = true,
                 TypeOfPromotion = TypeOfPromotion.BlackFriday,
-                Review = "4 stars"
+                Review = "4 stars",
+                Image = "2.jpeg"
             },
             new Product
             {
@@ -44,7 +46,8 @@ namespace E_Store.DataAccess
                 Price = 100,
                 Promotion = true,
                 TypeOfPromotion = TypeOfPromotion.CyberMonday,
-                Review = "4 stars"
+                Review = "4 stars",
+                Image = "3.jpeg"
             },
             new Product
             {
@@ -55,7 +58,8 @@ namespace E_Store.DataAccess
                 Price = 200,
                 Promotion = false,
                 TypeOfPromotion = TypeOfPromotion.None,
-                Review = "2 stars"
+                Review = "2 stars",
+                Image = "4.jpeg"
             },
             new Product
             {
@@ -66,7 +70,8 @@ namespace E_Store.DataAccess
                 Price = 500,
                 Promotion = true,
                 TypeOfPromotion = TypeOfPromotion.BlackFriday,
-                Review = "5 stars"
+                Review = "5 stars",
+                Image = "5.jpeg"
             },
         };
 

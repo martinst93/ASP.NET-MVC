@@ -1,0 +1,32 @@
+﻿@model AllBlackFridayProductsViewModel
+
+
+@{
+    ViewBag.Title = "Black Friday";
+}
+
+<h1 class="text-center">Black Friday Promotions</h1>
+<div class="row d-flex">
+    @foreach (var item in Model.AllBlackFridayViewModels)
+    {
+        @if (item.TypeOfPromotion == TypeOfPromotion.BlackFriday)
+        {
+
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="~/Images/" alt="Product image">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Id</h5>
+                        <h5 class="card-title">@item.Name</h5>
+                        <h5 class="card-title">@item.Price</h5>
+                        <h5 class="card-title">@item.Review</h5>
+                        <h5 class="card-title">@item.TypeOfPromotion</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+    }
+</div>

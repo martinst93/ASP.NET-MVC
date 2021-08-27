@@ -1,27 +1,31 @@
 ﻿@model List<SEDC.PizzaApp.Web.Models.ViewModels.PizzaViewModel>
+
 <!--<h2>Pizza list</h2>-->
-<div class="row">
-        <div class="col-md-4">
-            <p class="text-center">
-                @ViewData["Title"]
-            </p>
-            <p class="text-center">
-                @ViewData["NumberOfApp"]
-            </p>
-            <p class="text-center">
-                @ViewData["Pizza"]
-            </p>
-            <p class="text-center">
-                @ViewBag.Name
-            </p>
-            <p class="text-center">
-                @ViewBag.NumberOfPizzas
-            </p>
-            <p class="text-center">
-                @ViewBag.Pizza.Name
-            </p>
-        </div>
+@*<div class="row">
+    <div class="col-md-4">
+        <p class="text-center">
+            @ViewData["Title"]
+        </p>
+        <p class="text-center">
+            @ViewData["NumberOfApp"]
+        </p>
+        <p class="text-center">
+            @ViewData["Pizza"]
+        </p>
+        <p class="text-center">
+            @ViewBag.Name
+        </p>
+        <p class="text-center">
+            @ViewBag.NumberOfPizzas
+        </p>
+        <p class="text-center">
+            @ViewBag.Pizza.Name
+        </p>
+        <p class="text-center">
+            @ViewBag.Pizza.IsOnPromotion
+        </p>
     </div>
+</div>*@
 
 
 <div class="row">
@@ -30,9 +34,15 @@
         {
             <h4>Pizza Details</h4>
             <p>Pizza Name: @pizza.Id</p>
-            <p>User: @pizza.Name</p>
+            <p>User: @pizza.PizzaName</p>
             <p>Price: @pizza.Price</p>
             <p>Payment method: @pizza.PizzaSize</p>
+            <p>Promotion: @pizza.IsOnPromotion</p>
+
+            @Html.ActionLink("Details", "_OrderDetails", "Pizza", new { id = pizza.Id })
+            <a asp-action="DeletePizza" asp-controller="Pizza" asp-route-id="@pizza.Id">Delete</a>
+            @*<a asp-action="EditOrder" asp-controller="Pizza" asp-route-id="@pizza.Id">Edit Pizza</a>
+            <a asp-action="CreateOrder" asp-controller="Pizza" asp-route-id="@pizza.Id">Create Pizza</a>*@
         }
 
     </div>
@@ -44,3 +54,6 @@
             </p>
         </div>
     </div>*@
+
+
+<partial name="~/Views/Shared/Partial/_PizzaDetails.cshtml" for="@Model" />

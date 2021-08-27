@@ -34,9 +34,8 @@ namespace E_Store
             services.AddTransient<IRepository<Product>, ProductRepository>();
             services.AddTransient<IRepository<Order>, OrderRepository>();
 
-            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IProductOrderService, ProductOrderService>();
             services.AddTransient<IUserService, UserService>();
-            services.AddTransient<IOrderService, OrderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

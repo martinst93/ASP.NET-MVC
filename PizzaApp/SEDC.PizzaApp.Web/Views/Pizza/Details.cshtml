@@ -1,6 +1,18 @@
-﻿
-@model List<SEDC.PizzaApp.Web.Models.ViewModels.PizzaViewModel>
+﻿@model PizzaViewModel
 <h1>Pizza Details Page</h1>
+
+@*@{
+        var pizzaDetails = ViewData["Details"] as SEDC.PizzaApp.Web.Models.ViewModels.PizzaViewModel;
+
+        if (Model.IsOnPromotion)
+        {
+            <h4>The pizza is on promotion</h4>
+        }
+        else
+        {
+            <h4>The pizza is not on promotion</h4>
+        }
+    }*@
 
 <div class="row">
     <div class="col-md-4">
@@ -12,3 +24,5 @@
         </p>
     </div>
 </div>
+
+<partial name="~/Views/Shared/Partial/_PizzaDetails.cshtml" for="@Model" />

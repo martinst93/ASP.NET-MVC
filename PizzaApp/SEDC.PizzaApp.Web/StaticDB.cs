@@ -15,7 +15,7 @@ namespace SEDC.PizzaApp.Web
             new Pizza
             {
                 Id = 1,
-                Name = "Margarita",
+                PizzaName = PizzaName.Margarita,
                 IsOnPromotion = true,
                 Price = 7,
                 PizzaSize = PizzaSize.Normal,
@@ -24,7 +24,7 @@ namespace SEDC.PizzaApp.Web
             new Pizza
             {
                 Id = 2,
-                Name = "Napolitana",
+                PizzaName = PizzaName.Napolitana,
                 IsOnPromotion = false,
                 Price = 3,
                 PizzaSize = PizzaSize.Family,
@@ -33,7 +33,7 @@ namespace SEDC.PizzaApp.Web
             new Pizza
             {
                 Id = 3,
-                Name = "Capri",
+                PizzaName = PizzaName.Capri,
                 IsOnPromotion = false,
                 Price = 4,
                 PizzaSize = PizzaSize.Normal,
@@ -74,26 +74,32 @@ namespace SEDC.PizzaApp.Web
             new Order
             {
                 Id = 1,
-                PaymentMethod = Models.Enums.PaymentMethod.Card,
+                PaymentMethod = PaymentMethod.Card,
                 User = Users.First(),
-                Pizza = Pizzas.First(),
-                Price = Pizzas.First().Price
+                PizzaName = PizzaName.Margarita,
+                Price = Pizzas.First().Price,
+                Delivered = true,
+                PizzaStore = "Jakomo"
             },
             new Order
             {
                 Id = 2,
-                PaymentMethod = Models.Enums.PaymentMethod.Cash,
+                PaymentMethod = PaymentMethod.Cash,
                 User = Users.FirstOrDefault(x => x.Id == 2),
-                Pizza = Pizzas.FirstOrDefault(x => x.Id == 2),
-                Price = Pizzas.FirstOrDefault(x => x.Id == 2).Price
+                PizzaName = PizzaName.Napolitana,
+                Price = Pizzas.FirstOrDefault(x => x.Id == 2).Price,
+                Delivered = false,
+                PizzaStore = "Mama Italiana"
             },
             new Order
             {
                 Id = 3,
-                PaymentMethod = Models.Enums.PaymentMethod.Card,
+                PaymentMethod = PaymentMethod.Card,
                 User = Users.FirstOrDefault(x => x.Id == 3),
-                Pizza = Pizzas.FirstOrDefault(x => x.Id == 3),
-                Price = Pizzas.FirstOrDefault(x => x.Id == 3).Price
+                PizzaName = PizzaName.Capri,
+                Price = Pizzas.FirstOrDefault(x => x.Id == 3).Price,
+                Delivered = false,
+                PizzaStore = "Domino's"
             },
         };
     }

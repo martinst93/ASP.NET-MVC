@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static SEDC.PizzaApp.Web.Models.Domain.Order;
 
 namespace SEDC.PizzaApp.Web.Models.ViewModels
 {
@@ -12,9 +11,11 @@ namespace SEDC.PizzaApp.Web.Models.ViewModels
     {
         public int Id { get; set; }
         public PaymentMethod PaymentMethod { get; set; }
-        public string PizzaName { get; set; }
+        public PizzaName PizzaName { get; set; }
         public string UserFullName { get; set; }
         public double Price { get; set; }
         public string Address { get; set; }
+        public bool Delivered { get; internal set; }
+        public string PizzaStore { get; internal set; }
     }
 }

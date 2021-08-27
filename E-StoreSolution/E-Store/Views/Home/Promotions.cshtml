@@ -1,0 +1,27 @@
+﻿@model PromotionsViewModel
+
+@{
+    ViewBag.Title = "Promotions";
+}
+
+
+<div class="jumbotron">
+    <h1>Select the type of promotion you want!</h1>
+
+    <form asp-action="Index" asp-controller="Home" method="post">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                       
+                            <input class="btn btn-primary" type="button" value="Black Friday" onclick="location.href='@Url.Action("BlackFriday", "Home" )'" />
+
+                            <input class="btn btn-primary" type="button" value="Cyber Monday" onclick="location.href='@Url.Action("CyberMonday", "Home" )'" />
+                      
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

@@ -18,9 +18,19 @@ namespace E_Store.Services.Services
             _userRepository = userRepository;
         }
 
+        public int AddNewUser(User entity)
+        {
+            return _userRepository.Insert(entity);
+        }
+
+        public string GetLastUser()
+        {
+            return _userRepository.GetAll().LastOrDefault()?.FirstName;
+        }
+
         public List<User> GetUsers()
         {
-            throw new NotImplementedException();
+            return _userRepository.GetAll();
         }
     }
 }

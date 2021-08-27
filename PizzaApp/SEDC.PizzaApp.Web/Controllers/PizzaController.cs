@@ -45,15 +45,59 @@ namespace SEDC.PizzaApp.Web.Controllers
             if (id != null)
             {
                 var pizza = StaticDB.Pizzas.FirstOrDefault(x => x.Id == id);
-                ViewData.Add("Title", "Pizza Details Page");
+                //ViewData.Add("Title", "Pizza Details Page");
+
+                var mappedPizza = PizzaMapper.PizzaDetailsViewModel(pizza);
                 ViewBag.Pizza = pizza;
 
-                return View("~/Views/Pizza/Details.cshtml");
+                ViewData.Add("Details", mappedPizza);
+
+                //return View("~/Views/Pizza/Details.cshtml");
+                return View(mappedPizza);
             }
             else
             {
                 return RedirectToAction("Error", "Home");
             }
         }
+
+        [HttpGet]
+        public IActionResult DeletePizza(int id)
+        {
+            if (id > 0)
+            {
+                var pizza = StaticDB.Pizzas.FirstOrDefault(x => x.Id == id);
+                if (pizza == null)
+                {
+                    return View("ResourceNotFound");
+                }
+
+                var mappedPizza = PizzaMapper.PizzaDetailsViewModel(pizza);
+
+                return View(mappedPizza);
+            }
+
+            return View("Error");
+        }
+
+        [HttpGet]
+        public IActionResult DeletePizzaPost(int? id)
+        {
+            if (id != null)
+            {
+                var pizza = StaticDB.Pizzas.FirstOrDefault(x => x.Id == id);
+                if (pizza == null)
+                {
+                    return View("ActionIsForbidden");
+                }
+
+                //StaticDB.Orders.Remove(order);
+                StaticDB.Pizzas.RemoveAt(pizza.Id);
+
+                return RedirectToAction("Index");
+            }
+            return View("Error");
+        }
+
     }
 }

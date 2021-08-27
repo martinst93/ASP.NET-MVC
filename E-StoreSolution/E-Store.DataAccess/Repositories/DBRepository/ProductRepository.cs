@@ -29,11 +29,13 @@ namespace E_Store.DataAccess.Repositories.DBRepository
             return StaticDB.Products.FirstOrDefault(x => x.Id == id);
         }
 
-        public void Insert(Product entity)
+        public int Insert(Product entity)
         {
             StaticDB.ProductId++;
             _ = entity.Id == StaticDB.ProductId;
             StaticDB.Products.Add(entity);
+
+            return entity.Id;
         }
 
         public void Update(Product entity)

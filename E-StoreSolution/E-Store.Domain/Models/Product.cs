@@ -17,5 +17,6 @@ namespace E_Store.Domain.Models
         public double Price { get; set; }
         public string Review { get; set; }
         public bool Promotion { get; set; }
+        public string Image { get; set; }
     }
 }

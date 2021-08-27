@@ -10,5 +10,7 @@ namespace E_Store.Services.Services.Interface
     public interface IUserService
     {
         List<User> GetUsers();
+        int AddNewUser(User entity);
+        string GetLastUser();
     }
 }

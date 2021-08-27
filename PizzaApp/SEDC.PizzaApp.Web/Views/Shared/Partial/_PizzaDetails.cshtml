@@ -1,0 +1,47 @@
+﻿@*@model PizzaViewModel
+
+    <p>This is from the partial Pizza view</p>
+    <div class="row">
+        <div class="col-md-4">
+            <p>Id: @Model.Id</p>
+            <p>Name: @Model.PizzaName</p>
+            <p>promotion:@Model.IsOnPromotion</p>
+            <p>Size: @Model.PizzaSize</p>
+            <p>Price: @Model.Price</p>
+
+            @if (Model.IsOnPromotion)
+            {
+                <h4>The pizza is on promotion</h4>
+            }
+            else
+            {
+                <h4>The pizza is not on promotion</h4>
+            }
+        </div>
+    </div>*@
+
+@model List<SEDC.PizzaApp.Web.Models.ViewModels.PizzaViewModel>
+
+<div class="row">
+        <div class="col-md-5">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <h3>Pizza id:@i</h3>
+                <p>Pizza name: @Model[i].PizzaName</p>
+                <p>Promotion: @Model[i].IsOnPromotion</p>
+                <p>Price: @Model[i].Price</p>
+                <p>Pizza size: @Model[i].PizzaSize</p>
+
+                @if (Model[i].IsOnPromotion)
+                {
+                    <h4>The pizza is on promotion</h4>
+                }
+                else
+                {
+                    <h4>The pizza is not on promotion</h4>
+                }
+            }
+        </div>
+    </div>
+
+

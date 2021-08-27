@@ -1,0 +1,10 @@
+﻿@model PizzaViewModel
+
+
+<partial name="~/Views/Shared/Partial/_PizzaDetails.cshtml" for="@Model" />
+
+@Html.ActionLink("Home page", "Index", "Home")
+@Html.ActionLink("Pizza", "Index")
+
+
+<a asp-action="DeletePizzaPost" asp-controller="Pizza" asp-route-id="@Model.Id">Delete Pizza</a>

@@ -16,7 +16,7 @@ namespace SEDC.PizzaApp.Web.Models.Mapper
                 return new PizzaViewModel
                 {
                     Id = pizza.Id,
-                    Name = pizza.Name,
+                    PizzaName = pizza.PizzaName,
                     Price = pizza.Price + 10,
                     PizzaSize = pizza.PizzaSize,
                     HasExtras = pizza.HasExtras,
@@ -28,7 +28,7 @@ namespace SEDC.PizzaApp.Web.Models.Mapper
                 return new PizzaViewModel
                 {
                     Id = pizza.Id,
-                    Name = pizza.Name,
+                    PizzaName = pizza.PizzaName,
                     Price = pizza.Price,
                     PizzaSize = pizza.PizzaSize,
                     HasExtras = pizza.HasExtras,

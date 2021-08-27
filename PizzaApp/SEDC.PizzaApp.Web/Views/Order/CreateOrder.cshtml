@@ -1,0 +1,18 @@
+﻿@model OrderCreateViewModel
+@using SEDC.PizzaApp.Web.Models.Enums
+
+<div class="row">
+    <div class="col-md-5">
+        <form method="post">
+            <input type="hidden" asp-for="@Model.Id" />
+
+            <div class="form-group">
+                <label asp-for="@Model.Id" class="control-label">Name Of Pizza</label>
+                <select asp-for="@Model.Id" class="form-control" asp-items="ViewBag.Pizzas1"></select>
+                
+            </div>
+
+       
+        </form>
+    </div>
+</div>
