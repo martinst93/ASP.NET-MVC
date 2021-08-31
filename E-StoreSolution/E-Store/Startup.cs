@@ -1,18 +1,12 @@
-using E_Store.DataAccess.Repositories;
-using E_Store.DataAccess.Repositories.DBRepository;
-using E_Store.Domain.Models;
+using E_Store.Services.Helpers;
 using E_Store.Services.Services;
 using E_Store.Services.Services.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace E_Store
 {
@@ -30,12 +24,12 @@ namespace E_Store
         {
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
-            services.AddTransient<IRepository<User>, UserRepository>();
-            services.AddTransient<IRepository<Product>, ProductRepository>();
-            services.AddTransient<IRepository<Order>, OrderRepository>();
-
             services.AddTransient<IProductOrderService, ProductOrderService>();
             services.AddTransient<IUserService, UserService>();
+
+            string connectionString = Configuration.GetConnectionString("DefaultConnection");
+
+            DIModule.RegisterRepositories(services, connectionString);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

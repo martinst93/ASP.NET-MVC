@@ -10,8 +10,4 @@
     <ProjectReference Include="..\E-Store.Domain\E-Store.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
-
 </Project>

@@ -14,14 +14,16 @@
 
             <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="~/Images/" alt="Product image">
+                    <img class="card-img-top" src="~/Images/@item.Image" alt="Product image">
                     <div class="card-body">
-                        <h5 class="card-title">@item.Id</h5>
-                        <h5 class="card-title">@item.Name</h5>
-                        <h5 class="card-title">@item.Price</h5>
-                        <h5 class="card-title">@item.Review</h5>
-                        <h5 class="card-title">@item.TypeOfPromotion</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="card-title">Code Number: @item.Id</h5>
+                        <h5 class="card-title">Category: @item.Category</h5>
+                        <h5 class="card-title">Name: @item.Name</h5>
+                        <h5 class="card-title">Price: @item.Price</h5>
+                        <h5 class="card-title">Review: @item.Review</h5>
+                        <h5 class="card-title">Description: @item.Description</h5>
+                        <h5 class="card-title">Type Of Promotion: @item.TypeOfPromotion</h5>
+                        @*<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>*@
                         <a href="#" class="btn btn-primary">Add To Cart</a>
                     </div>
                 </div>
