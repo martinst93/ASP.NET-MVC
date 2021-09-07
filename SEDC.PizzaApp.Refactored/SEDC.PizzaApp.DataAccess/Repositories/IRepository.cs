@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace SEDC.PizzaApp.DataAccess.Repositories
 {
     public interface IRepository<T>
     {
-        T GetById(int id);
+        T GetT(int id);
         List<T> GetAll();
-        void Insert(T entity);
-        void Update(T entity);
-        void DeleteById(int id);
     }
 }
